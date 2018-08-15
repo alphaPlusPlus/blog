@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Blog.DAL.Models;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Blog.DAL.Models
+namespace Blog.DL.Models
 {
-    public class Blog : BaseEntity
+    public class BlogResponseModel : BaseResponseModel
     {
         public string Url { get; set; }
         public int Rating { get; set; }

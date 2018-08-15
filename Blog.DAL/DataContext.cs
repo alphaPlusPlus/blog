@@ -10,9 +10,18 @@ namespace Blog.DAL
         public DbSet<Models.Blog> Blogs { get; set; }
         public DbSet<Models.Post> Posts { get; set; }
 
+        public DataContext(DbContextOptions<DataContext> options) : base(options)
+        {
+            Database.EnsureCreated();
+        }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"")
+            base.OnConfiguring(optionsBuilder);
+        }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
         }
     }
 }
